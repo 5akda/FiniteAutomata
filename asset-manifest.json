@@ -1,0 +1,23 @@
+{
+  "files": {
+    "main.css": "/FiniteAutomata/static/css/main.d1b05096.chunk.css",
+    "main.js": "/FiniteAutomata/static/js/main.590ab5a7.chunk.js",
+    "main.js.map": "/FiniteAutomata/static/js/main.590ab5a7.chunk.js.map",
+    "runtime-main.js": "/FiniteAutomata/static/js/runtime-main.6af22fec.js",
+    "runtime-main.js.map": "/FiniteAutomata/static/js/runtime-main.6af22fec.js.map",
+    "static/js/2.7556d705.chunk.js": "/FiniteAutomata/static/js/2.7556d705.chunk.js",
+    "static/js/2.7556d705.chunk.js.map": "/FiniteAutomata/static/js/2.7556d705.chunk.js.map",
+    "index.html": "/FiniteAutomata/index.html",
+    "precache-manifest.a00ba27e99c9758e80c0d8538bde889c.js": "/FiniteAutomata/precache-manifest.a00ba27e99c9758e80c0d8538bde889c.js",
+    "service-worker.js": "/FiniteAutomata/service-worker.js",
+    "static/css/main.d1b05096.chunk.css.map": "/FiniteAutomata/static/css/main.d1b05096.chunk.css.map",
+    "static/js/2.7556d705.chunk.js.LICENSE.txt": "/FiniteAutomata/static/js/2.7556d705.chunk.js.LICENSE.txt",
+    "static/media/logo.svg": "/FiniteAutomata/static/media/logo.5d5d9eef.svg"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.6af22fec.js",
+    "static/js/2.7556d705.chunk.js",
+    "static/css/main.d1b05096.chunk.css",
+    "static/js/main.590ab5a7.chunk.js"
+  ]
+}
