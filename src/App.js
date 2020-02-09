@@ -8,7 +8,7 @@ function App() {
       <header className="App-header">
         <img src={logo} className="App-logo" alt="logo" />
         <p>
-          NFA and DFA 55555555
+          Finite Automaton is Loading...
         </p>
       </header>
     </div>
