@@ -1,5 +1,6 @@
 import React from 'react';
 import './App.css';
+import testImg from './images/testImg.png'
 
 function App() {
   return (
@@ -17,7 +18,7 @@ function App() {
       </div>
 
       <div className="Layout-body">
-
+        <img src={testImg} alt="testImg" className="Test-img"/>
       </div>
 
     </div>
