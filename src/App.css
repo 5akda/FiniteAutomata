@@ -9,11 +9,8 @@
 .Layout-body {
   background-color: #1d4769;
   display: flex;
-  min-height: 90vh;
   flex-direction: column;
   align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
   color: white;
 }
 
@@ -24,9 +21,30 @@
   padding-left: 10px;
   font-family: 'Courier New', Courier, monospace;
   min-height: 30px;
+  min-width: 100%;
 }
 
-.App-input {
+.Layout-controller {
+  background-color: #1d4769;
+  padding-left: 10px;
+  height: 80px;
+  padding-top: 10px;
+
+}
+
+.string {
+  font-size: 40px;
+  color: #ffffff;
+  font-family: 'Courier New', Courier, monospace;
+}
+
+.reader {
+  font-size: 40px;
+  color: #ffffff;
+  font-family: 'Courier New', Courier, monospace;
+}
+
+.input {
   font-size: 20px;
   color: #000000;
   margin-left: 15px;
@@ -35,7 +53,7 @@
   font-family: 'Courier New', Courier, monospace;
 }
 
-.App-enterbutton {
+.enterbutton {
   font-size: 22px;
   color: #ffffff;
   background-color:#0bc433;
@@ -43,7 +61,7 @@
   font-family: 'Courier New', Courier, monospace;
 }
 
-.App-clearbutton {
+.clearbutton {
   font-size: 22px;
   color: #ffffff;
   background-color:#f3331a;
@@ -51,10 +69,30 @@
   font-family: 'Courier New', Courier, monospace;
 }
 
-.App-link {
+.nextbutton {
+  font-size: 22px;
+  color: #ffffff;
+  background-color:#0d9abd;
+  margin-left: 35px;
+  font-family: 'Courier New', Courier, monospace;
+  height: 48px;
+}
+
+.restartbutton {
+  font-size: 22px;
+  color: #ffffff;
+  background-color:#0d9abd;
+  margin-left: 15px;
+  font-family: 'Courier New', Courier, monospace;
+  height: 48px;
+}
+
+.link {
   color: #61dafb;
 }
 
-.Test-img {
+img {
+  margin-top: 15px;
+  max-height: 750px;
   max-width: 100%;
 }
