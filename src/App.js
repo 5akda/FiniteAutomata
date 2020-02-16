@@ -52,77 +52,97 @@ class App extends Component {
     this.state = {
       text: '',
       string: '',
-      reader: '',
       nextState: 's_init',
-      stepCount: 0,
       img: base,
-      unclickable: true
+      unclickable: true,
+      nextbutton: 'Start',
+      looper: null
     }
+    this.handleEnterClick = this.handleEnterClick.bind(this)
+    this.handleNextClick = this.handleNextClick.bind(this)
+    this.handleRestartClick = this.handleRestartClick.bind(this)
+    this.handleClearClick = this.handleClearClick.bind(this)
+    this.handleAutoplayClick = this.handleAutoplayClick.bind(this)
+
   }
 
   handleEnterClick(){
     this.handleRestartClick()
     this.setState({ 
-      string: this.state.text,
+      string: ' '+this.state.text,
       unclickable: false,
-     })
+      nextbutton: 'Start'
+    })
   }
 
   handleNextClick(){
-    if(this.state.stepCount < this.state.string.length) {
-      let presentChar = this.state.string.charAt(this.state.stepCount)
-      switch(this.state.nextState){
-        case 's_init': {
-          this.s_init(presentChar)
-          break
-        }
-        case 's_trap': {
-          this.s_trap(presentChar)
-        }
-      }
-      this.setState({
-        stepCount: this.state.stepCount+1,
-        reader: this.state.reader + '^'
-      })
+    if(this.state.nextbutton === 'Restart'){
+      this.handleRestartClick()
     }
+    else{
+        this.setState({ nextbutton: 'Next' })
 
-    else if(this.state.stepCount == this.state.string.length) {
-      let end = ''
-      switch(this.state.nextState){
-        case 's_init': {
-          this.s_init(end)
-          break
-        }
-        case 's_trap': {
-          this.s_trap(end)
+      if(this.state.string.length > 1) {
+        let presentChar = this.state.string.charAt(1)
+        this.setState({ string: this.state.string.substring(1) })
+        switch(this.state.nextState){
+          case 's_init': {
+            this.s_init(presentChar)
+            break
+          }
+          case 's_trap': {
+            this.s_trap(presentChar)
+            break
+          }
         }
       }
-      this.setState({
-        stepCount: this.state.stepCount+1,
-        reader: this.state.reader + '^'
-      })
+
+      else if(this.state.string.length === 1) {
+        let end = ''
+        this.setState({ string: this.state.string.substring(1) })
+        switch(this.state.nextState){
+          case 's_init': {
+            this.s_init(end)
+            break
+          }
+          case 's_trap': {
+            this.s_trap(end)
+            break
+          }
+        }
+      }
+
+      else if(this.state.string.length === 0) {
+        this.setState({ nextbutton: 'Restart' })
+      }
     }
+    return(this.state.string.length)
   }
 
   handleRestartClick(){
     this.setState({
-      reader: '',
+      string: ' '+this.state.text,
       nextState: 's_init',
-      stepCount: 0,
       img: base,
+      nextbutton: 'Start'
     })
+    clearInterval(this.state.looper)
   }
 
   handleClearClick(){
     this.setState({
       text: '',
       string: '',
-      reader: '',
       nextState: 's_init',
-      stepCount: 0,
       img: base,
-      unclickable: true
+      unclickable: true,
+      nextbutton: 'Start',
     })
+    clearInterval(this.state.looper)
+  }
+
+  handleAutoplayClick(){
+    this.setState({looper: setInterval(() => this.handleNextClick(),1000)})
   }
 
   s_init(nextChar) {
@@ -175,34 +195,28 @@ class App extends Component {
         <div className="Layout-input">
           Input String:
           <input className="input" size="20" value={this.state.text}
-            onChange={(e)=>this.setState({text: e.target.value})}/>
+            onChange={ (e)=>this.setState({text: e.target.value}) }/>
 
           <button className="enterbutton"
-            onClick={()=>this.handleEnterClick()}>Enter
+            onClick={ ()=>this.handleEnterClick() }>Enter
           </button>
 
           <button className="clearbutton"
-            onClick={()=>this.handleClearClick()}>Clear
+            onClick={ ()=>this.handleClearClick() }>Clear
           </button>
         </div>
 
         <div className="Layout-controller">
-          <b className="string">{this.state.string}</b>
-
-          <button className="nextbutton" onClick={()=>this.handleNextClick()} 
-            disabled={this.state.unclickable}>Next
+          <button className="nextbutton" onClick={ ()=>this.handleNextClick() } 
+            disabled={this.state.unclickable}>{this.state.nextbutton}
           </button>
           
-          <button className="restartbutton"
+          <button className="autoplaybutton" onClick={ ()=>this.handleAutoplayClick() }
             disabled={this.state.unclickable}>Autoplay
           </button>
 
-          <button className="restartbutton" onClick={()=>this.handleRestartClick()}
-            disabled={this.state.unclickable}>Restart
-          </button>
+          <b className="string">&nbsp;-&gt;&nbsp;{this.state.string}</b>
 
-          <br/>
-          <b className="reader">{this.state.reader}</b>
         </div>
 
         <div className="Layout-body">

@@ -27,7 +27,6 @@
 .Layout-controller {
   background-color: #1d4769;
   padding-left: 10px;
-  height: 80px;
   padding-top: 10px;
 
 }
@@ -35,12 +34,7 @@
 .string {
   font-size: 40px;
   color: #ffffff;
-  font-family: 'Courier New', Courier, monospace;
-}
-
-.reader {
-  font-size: 40px;
-  color: #ffffff;
+  margin-left: 20px;
   font-family: 'Courier New', Courier, monospace;
 }
 
@@ -73,18 +67,19 @@
   font-size: 22px;
   color: #ffffff;
   background-color:#0d9abd;
-  margin-left: 35px;
   font-family: 'Courier New', Courier, monospace;
-  height: 48px;
+  height: 40px;
+  width: 140px;
 }
 
-.restartbutton {
+.autoplaybutton {
   font-size: 22px;
   color: #ffffff;
   background-color:#0d9abd;
   margin-left: 15px;
   font-family: 'Courier New', Courier, monospace;
-  height: 48px;
+  height: 40px;
+  width: 140px;
 }
 
 .link {
