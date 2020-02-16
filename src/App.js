@@ -376,6 +376,7 @@ class App extends Component {
 
         <div className="Layout-body">
           <img src={ this.state.img } alt="img"/>
+          <br/>Last Update: 16-Feb-2020 10:40PM
         </div>
 
       </div>
