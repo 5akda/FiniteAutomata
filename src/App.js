@@ -157,7 +157,7 @@ class App extends Component {
   }
 
   handleAutoplayClick() {
-    this.setState({looper: setInterval(() => this.handleNextClick(),1000)})
+    this.setState({looper: setInterval(() => this.handleNextClick(),1800)})
   }
 
   s_init(nextChar) {
