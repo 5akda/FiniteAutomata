@@ -1,5 +1,7 @@
 import React, { Component } from 'react'
 import './App.css'
+import 'bootstrap/dist/css/bootstrap.min.css';
+import { Button, InputGroup, FormControl, Form, Navbar, Nav } from 'react-bootstrap';
 
 import { stateInit } from './states/stateInit'
 import { stateTrap } from './states/stateTrap'
@@ -115,52 +117,68 @@ class App extends Component {
   render() {
     return (
       <div className="Layout-all">
-        
-        <div className="Layout-header">
-          Finite Automata - Ticket Vending Machine
-        </div>
+
+        <Navbar variant="dark">
+          <Navbar.Brand>Ticket Vendor</Navbar.Brand>
+          <Nav className="mr-auto">
+            
+          </Nav>
+          <Form inline className="Header">
+            <Button variant="outline-info">Help</Button>
+            <Button variant="outline-info">About Us</Button>
+          </Form>
+        </Navbar>
 
         <div className="Layout-input">
-          Input String:
-          <input className="input" size="20" value={this.state.text}
-            onChange={ (e)=>this.setState({text: e.target.value}) }/>
 
-          <button className="enterbutton"
-            onClick={ ()=>this.handleEnterClick() }>Enter
-          </button>
+          <InputGroup className="Input-group">
+              <FormControl
+                placeholder="Enter a String"
+                value={this.state.text}
+                onChange={ (e)=>this.setState({text: e.target.value}) }
+              />
+              <InputGroup.Append>
+                <Button variant="success" onClick={()=>this.handleEnterClick()}>
+                  &nbsp;ENTER&nbsp;
+                </Button>
+                <Button variant="danger" onClick={()=>this.handleClearClick()}>
+                  &nbsp;CLEAR&nbsp;
+                </Button>
+              </InputGroup.Append>
+          </InputGroup>
 
-          <button className="clearbutton"
-            onClick={ ()=>this.handleClearClick() }>Clear
-          </button>
           <div className="help">
-            <button onClick={ ()=>this.handleCharClick('1') }>
+            <Button variant="outline-primary" onClick={()=>this.handleCharClick('1')}>
               1 : Select Station 1
-            </button>
-            <button onClick={ ()=>this.handleCharClick('2') }>
+            </Button>
+            <Button variant="outline-primary" onClick={ ()=>this.handleCharClick('2') }>
               2 : Select Station 2
-            </button>
-            <button onClick={ ()=>this.handleCharClick('3') }>
+            </Button>
+            <Button variant="outline-primary" onClick={ ()=>this.handleCharClick('3') }>
               3 : Select Station 3
-            </button>
-            <button onClick={ ()=>this.handleCharClick('4') }>
+            </Button>
+            <Button variant="outline-primary" onClick={ ()=>this.handleCharClick('4') }>
               4 : Select Station 4
-            </button>
-            <button onClick={ ()=>this.handleCharClick('C') }>
+            </Button>
+            <Button variant="outline-primary" onClick={ ()=>this.handleCharClick('C') }>
               C : Insert 1 Coin
-            </button>
+            </Button>
           </div>
+          
         </div>
 
         <div className="Layout-controller">
-          <button className="nextbutton" onClick={ ()=>this.handleNextClick() } 
+          <Button variant="outline-warning"
+            onClick={ ()=>this.handleNextClick() } 
             disabled={this.state.unclickable}>{this.state.nextbutton}
-          </button>
+          </Button>
           
-          <button className="autoplaybutton" onClick={ ()=>this.handleAutoplayClick() }
+          <Button variant="outline-warning"
+            onClick={ ()=>this.handleAutoplayClick() }
             disabled={this.state.unclickable}>Autoplay
-          </button>
+          </Button>
 
-          <b className="string">&nbsp;-&gt;&nbsp;{this.state.string}</b>
+          <b className="string">{this.state.string}</b>
 
         </div>
 

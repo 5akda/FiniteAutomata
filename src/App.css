@@ -1,9 +1,10 @@
-.Layout-header {
-  color: #FFFFFF;
-  background-color: #1d4769;
-  padding: 10px;
-  font-size: 25px;
-  font-family: 'Courier New', Courier, monospace;
+h5 {
+  color: #eeeeee;
+}
+
+.Header > Button {
+  margin: 2px;
+  font-size: small;
 }
 
 .Layout-body {
@@ -18,8 +19,6 @@
   background-color: #ffffff;
   font-size: 22px;
   color: #000000;
-  padding-left: 10px;
-  font-family: 'Courier New', Courier, monospace;
   min-height: 30px;
   min-width: 100%;
 }
@@ -28,7 +27,7 @@
   background-color: #1d4769;
   padding-left: 10px;
   padding-top: 10px;
-
+  display: flex;
 }
 
 .string {
@@ -38,48 +37,22 @@
   font-family: 'Courier New', Courier, monospace;
 }
 
-.input {
-  font-size: 20px;
+.Input-group {
+  padding: 10px;
+}
+
+.Input-group > input {
+  font-family: 'Courier New', Courier, monospace;
   color: #000000;
-  margin-left: 15px;
-  margin-block-start: 5px;
-  margin-block-end: 5px;
-  font-family: 'Courier New', Courier, monospace;
+  font-weight: bold;
+  font-size: large;
 }
 
-.enterbutton {
-  font-size: 22px;
-  color: #ffffff;
-  background-color:#0bc433;
-  margin-left: 15px;
-  font-family: 'Courier New', Courier, monospace;
-}
-
-.clearbutton {
-  font-size: 22px;
-  color: #ffffff;
-  background-color:#f3331a;
-  margin-left: 15px;
-  font-family: 'Courier New', Courier, monospace;
-}
-
-.nextbutton {
-  font-size: 22px;
-  color: #ffffff;
-  background-color:#0d9abd;
-  font-family: 'Courier New', Courier, monospace;
-  height: 30px;
-  width: 140px;
-}
-
-.autoplaybutton {
-  font-size: 22px;
-  color: #ffffff;
-  background-color:#0d9abd;
-  margin-left: 15px;
-  font-family: 'Courier New', Courier, monospace;
-  height: 30px;
-  width: 140px;
+.Layout-controller > Button {
+  margin-right: 5px;
+  font-weight: bold;
+  width: 120px;
+  height: 40px;
 }
 
 .link {
@@ -93,7 +66,19 @@ img {
 }
 
 .help {
-  font-size: 18px;
+  padding-left: 10px;
+  padding-right: 10px;
+  padding-bottom: 5px;
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.help > Button {
+  height: 40px;
+  margin-right: 5px;
+  margin-bottom: 5px;
+  font-size: small;
+  font-weight: bold;
 }
 
 .Layout-all {
