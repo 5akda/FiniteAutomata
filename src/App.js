@@ -168,23 +168,25 @@ class App extends Component {
         </div>
 
         <div className="Layout-controller">
-          <Button variant="outline-warning"
-            onClick={ ()=>this.handleNextClick() } 
-            disabled={this.state.unclickable}>{this.state.nextbutton}
-          </Button>
-          
-          <Button variant="outline-warning"
-            onClick={ ()=>this.handleAutoplayClick() }
-            disabled={this.state.unclickable}>Autoplay
-          </Button>
+          <div className="Layout-buttonzone">
+            <Button variant="outline-warning"
+              onClick={ ()=>this.handleNextClick() } 
+              disabled={this.state.unclickable}>{this.state.nextbutton}
+            </Button>
+            
+            <Button variant="outline-warning"
+              onClick={ ()=>this.handleAutoplayClick() }
+              disabled={this.state.unclickable}>Autoplay
+            </Button>
+          </div>
 
-          <b className="string">{this.state.string}</b>
+          <b className="string">-&gt;{this.state.string}</b>
 
         </div>
 
         <div className="Layout-body">
           <img src={ this.state.img } alt="img"/>
-          <br/>Last Update: 29-Feb-2020 11:50PM
+          <br/>Last Update: 9-Mar-2020 3:30PM
         </div>
 
       </div>

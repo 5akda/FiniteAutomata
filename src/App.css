@@ -28,12 +28,18 @@ h5 {
   padding-left: 10px;
   padding-top: 10px;
   display: flex;
+  flex-wrap: wrap;
+}
+
+.Layout-buttonzone {
+  padding-top: 10px;
+  margin-right: 100px;
 }
 
 .string {
-  font-size: 30px;
+  font-size: 25px;
   color: #ffffff;
-  margin-left: 20px;
+  margin-top: 12px;
   font-family: 'Courier New', Courier, monospace;
 }
 
@@ -48,7 +54,7 @@ h5 {
   font-size: large;
 }
 
-.Layout-controller > Button {
+.Layout-buttonzone > Button {
   margin-right: 5px;
   font-weight: bold;
   width: 120px;
