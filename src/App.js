@@ -8,6 +8,8 @@ import { stateTrap } from './states/stateTrap'
 
 import base from './images/base.png'
 
+const credit = "Source Code Last Update: 22-Mar-20 1:15AM"
+
 class App extends Component {
 
   constructor(props){
@@ -20,8 +22,9 @@ class App extends Component {
       unclickable: true,
       nextbutton: 'Start',
       looper: null,
-      showHelp: false,
-      showAboutUS: false
+      showHelp: true,
+      showWarning: false,
+      footMsg: credit
     }
     this.handleEnterClick = this.handleEnterClick.bind(this)
     this.handleNextClick = this.handleNextClick.bind(this)
@@ -33,12 +36,17 @@ class App extends Component {
   }
 
   handleEnterClick() {
-    this.handleRestartClick()
-    this.setState({ 
-      string: ' '+this.state.text,
-      unclickable: false,
-      nextbutton: 'Start'
-    })
+    if(this.state.text.match("[^1-4C]")==null) {
+      this.handleRestartClick()
+      this.setState({ 
+        string: ' '+this.state.text,
+        unclickable: false,
+        nextbutton: 'Start'
+      })
+    }
+    else {
+      this.setState({ showWarning: true })
+    }
   }
 
   handleNextClick() {
@@ -131,7 +139,7 @@ class App extends Component {
 
             <Button
               onClick={()=>this.setState({showHelp:true})}
-              variant="outline-info">Help
+              variant="info">&nbsp;HELP &amp; ABOUT US&nbsp;
             </Button>
 
             <HelpModal
@@ -139,30 +147,20 @@ class App extends Component {
               onHide={ ()=> this.setState({showHelp: false}) }
             />
 
-            <Button 
-              onClick={()=>this.setState({showAboutUS:true})}
-              variant="outline-info">About Us
-            </Button>
-
-            <AboutUsModal
-              show={this.state.showAboutUS}
-              onHide={()=>this.setState({showAboutUS:false})}
-            />
           </Form>
         </Navbar>
 
         <div className="Layout-input">
-
           <InputGroup className="Input-group">
             <InputGroup.Prepend>
               <InputGroup.Text>String</InputGroup.Text>
             </InputGroup.Prepend>
                 <FormControl
-                  placeholder="Ex.3CCC12CC"
+                  placeholder="e.g.3CCC12CC"
                   value={this.state.text}
                   onChange={ (e)=>this.setState({text: e.target.value}) }
                 />
-            <InputGroup.Append>
+            <InputGroup.Append> 
                 <Button variant="success" onClick={()=>this.handleEnterClick()}>
                   &nbsp;ENTER&nbsp;
                 </Button>
@@ -171,6 +169,11 @@ class App extends Component {
                 </Button>
             </InputGroup.Append>
           </InputGroup>
+
+          <WarningModal
+            show={this.state.showWarning}
+            onHide={ ()=> this.setState({showWarning: false}) }
+          />
 
           <div className="help">
             <Button variant="outline-primary" onClick={()=>this.handleCharClick('1')}>
@@ -211,7 +214,8 @@ class App extends Component {
 
         <div className="Layout-body">
           <img src={ this.state.img } alt="img"/>
-          <br/>Last Update: 12-Mar-2020 4:30PM
+          <br/>
+          <a href="https://github.com/parzival48/FiniteAutomata">{ this.state.footMsg }</a>
         </div>
       </div>
     );
@@ -228,25 +232,15 @@ function HelpModal(props) {
       aria-labelledby="contained-modal-title-vcenter"
       centered
     >
-      <Modal.Header closeButton>
-        <Modal.Title id="contained-modal-title-vcenter">
-          Help
-        </Modal.Title>
+      <Modal.Header>
+        <h4><b>DFA เครื่องขายตั๋วรถไฟ</b></h4>
       </Modal.Header>
       <Modal.Body>
         <p>
-          DFA แบบจำลองเครื่องขายตั๋ว
-          <ul>
-            <li>
-              เลือกสถานีและสามารถเปลี่ยนไปสถานีอื่นได้ถ้ายังไม่ใส่เหรียญ
-            </li>
-            <li>
-              เมื่อใส่เหรียญแล้วต้องใส่ให้ครบตามจำนวนสถานีที่ผ่าน
-            </li>
-          </ul>
+          &emsp;เลือกสถานีและสามารถเปลี่ยนไปสถานีอื่นได้ถ้ายังไม่ใส่เหรียญ แต่ถ้าใส่เหรียญแล้วต้องใส่ให้ครบตามจำนวนสถานีที่ผ่าน
         </p>
         <p>
-          <b>วิธีใช้งาน</b>
+          <b>วิธีใช้งานเว็บ</b>
           <ol>
             <li>
               พิมพ์ String ที่มี Symbol ใน &Sigma;{" = {1, 2, 3, 4, C} "} หรือกดปุ่มเพื่อเพิ่ม Symbol
@@ -258,59 +252,39 @@ function HelpModal(props) {
               กด Start แล้วกด Next เพื่อดู Transition ทีละ Step หรือกด Autoplay เพื่อดู Transition ต่อไปโดยอัตโนมัติ
             </li>
           </ol>
+          <b>สมาชิกผู้จัดทำ</b>
+          <ul>
+            <li>60010727&emsp;นายพิสิษฐ์&ensp;มาหนู</li>
+            <li>60010731&emsp;นายพีรดนย์&ensp;น้อมแนบ</li>
+            <li>60010866&emsp;นายรัตนฤทธิ์&ensp;ประสมทรัพย์</li>
+            <li>60010915&emsp;นายวสวัตติ์&ensp;บุณยฤทธิกิจ</li>
+            <li>60010968&emsp;นายศักดา&ensp;สุวรรณธีรางกูร</li>
+          </ul>
         </p>
+        <div className="help-footer">
+          <Button variant="info" onClick={props.onHide}>เข้าใจแล้ว !</Button>
+        </div>
       </Modal.Body>
-      <Modal.Footer>
-        <Button onClick={props.onHide}>Close</Button>
-      </Modal.Footer>
     </Modal>
   );
 }
 
-function AboutUsModal(props) {
+function WarningModal(props) {
   return (
     <Modal
       {...props}
       size="lg"
       aria-labelledby="contained-modal-title-vcenter"
-      centered
     >
-      <Modal.Header closeButton>
-        <Modal.Title id="contained-modal-title-vcenter">
-          About Us
-        </Modal.Title>
-      </Modal.Header>
       <Modal.Body>
         <p>
-          จัดทำโดยนักศึกษาภาควิชาวิศวกรรมคอมพิวเตอร์
-          สถาบันเทคโนโลยีพระจอมเกล้าเจ้าคุณทหารลาดกระบัง
-          (CE KMITL #56)
-          <ul>
-            <li>
-              นายxxxxx xxxxxxxxxx 60010xxx
-            </li>
-            <li>
-              นายxxxxx xxxxxxxxxx 60010xxx
-            </li>
-            <li>
-              นายxxxxx xxxxxxxxxx 60010xxx
-            </li>
-            <li>
-              นายxxxxx xxxxxxxxxx 60010xxx
-            </li>
-            <li>
-              นายxxxxx xxxxxxxxxx 60010xxx
-            </li>
-          </ul>
-          Source Code:&nbsp;
-          <a href="https://github.com/parzival48/FiniteAutomata">
-            Github Repository
-          </a>
+          <span>&#9888;</span>
+          &nbsp; โปรดป้อน String ที่เป็น Alphabet ในเซต &Sigma;{" = {1, 2, 3, 4, C} "}
         </p>
+        <div className="help-footer">
+          <Button variant="warning" onClick={props.onHide}>เข้าใจแล้ว !</Button>
+        </div>
       </Modal.Body>
-      <Modal.Footer>
-        <Button onClick={props.onHide}>Close</Button>
-      </Modal.Footer>
     </Modal>
   );
 }

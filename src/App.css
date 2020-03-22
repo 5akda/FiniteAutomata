@@ -104,3 +104,11 @@ img {
 .Txt-input {
   font: large;
 }
+
+.help-footer {
+  float: right;
+}
+
+.Layout-body a {
+  color: #61dafb;
+}
