@@ -1,27 +1,27 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "d39effa3bc9270173898ab8625248b55",
+    "revision": "ef90e13bab0b60e59a39708cd8a53847",
     "url": "/FiniteAutomata/index.html"
   },
   {
-    "revision": "0c2dd5f7b427bb43f5be",
+    "revision": "4249e9d3b81ca18ceaf9",
     "url": "/FiniteAutomata/static/css/2.47e06e2e.chunk.css"
   },
   {
-    "revision": "6930d08c044e504107fe",
-    "url": "/FiniteAutomata/static/css/main.9aa7f4fe.chunk.css"
+    "revision": "6df722fa70586f7d4963",
+    "url": "/FiniteAutomata/static/css/main.6e621839.chunk.css"
   },
   {
-    "revision": "0c2dd5f7b427bb43f5be",
-    "url": "/FiniteAutomata/static/js/2.079b4f2a.chunk.js"
+    "revision": "4249e9d3b81ca18ceaf9",
+    "url": "/FiniteAutomata/static/js/2.a9567d7e.chunk.js"
   },
   {
     "revision": "bfc08a62983de46a4daec9f8c3c657d8",
-    "url": "/FiniteAutomata/static/js/2.079b4f2a.chunk.js.LICENSE.txt"
+    "url": "/FiniteAutomata/static/js/2.a9567d7e.chunk.js.LICENSE.txt"
   },
   {
-    "revision": "6930d08c044e504107fe",
-    "url": "/FiniteAutomata/static/js/main.61d9b739.chunk.js"
+    "revision": "6df722fa70586f7d4963",
+    "url": "/FiniteAutomata/static/js/main.756de7ed.chunk.js"
   },
   {
     "revision": "ef5fa6bfc1acdff9bb63",
@@ -30,6 +30,10 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
     "revision": "404faf2682b2a929f2751c89615b54d4",
     "url": "/FiniteAutomata/static/media/base.404faf26.png"
+  },
+  {
+    "revision": "460cb72089a7268c5573e917bc501f99",
+    "url": "/FiniteAutomata/static/media/help1.460cb720.jpg"
   },
   {
     "revision": "57b60d43706205e86de30d1525e93f56",
