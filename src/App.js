@@ -34,11 +34,11 @@ class App extends Component {
     this.handleClearClick = this.handleClearClick.bind(this)
     this.handleAutoplayClick = this.handleAutoplayClick.bind(this)
     this.handleCharClick = this.handleCharClick.bind(this)
-
+    this.isFinishState = this.isFinishState.bind(this)
   }
 
   handleEnterClick() {
-    if(this.state.text.match("[^1-4C]")==null) {
+    if(this.state.text.match("[^1-4Cc]")==null) {
       this.handleRestartClick()
       this.setState({ 
         string: ' '+this.state.text,
@@ -75,7 +75,8 @@ class App extends Component {
       
       // ----- STATE SELECTOR ----- //
       let outputFromState = null
-      switch(this.state.nextState){
+      let q = this.state.nextState
+      switch(q){
         case 'Init': {
           outputFromState = stateInit(presentChar)
           break
@@ -89,6 +90,8 @@ class App extends Component {
         }
       }
       
+      this.isFinishState(q)
+
       this.setState({
         img: outputFromState[0],
         nextState: outputFromState[1]
@@ -101,7 +104,8 @@ class App extends Component {
       string: ' '+this.state.text,
       nextState: 'Init',
       img: base,
-      nextbutton: 'Start'
+      nextbutton: 'Start',
+      footMsg: credit
     })
     clearInterval(this.state.looper)
   }
@@ -114,6 +118,7 @@ class App extends Component {
       img: base,
       unclickable: true,
       nextbutton: 'Start',
+      footMsg: credit
     })
     clearInterval(this.state.looper)
   }
@@ -126,6 +131,17 @@ class App extends Component {
   handleCharClick(char) {
     // - Insert a char by clicking a button - //
     this.setState({ text: this.state.text + char })
+  }
+
+  isFinishState(state) {
+    if(state === "Done"){
+      this.setState({ footMsg: "Accept this string!" })
+      return true
+    }
+    else{
+      this.setState({ footMsg: credit })
+      return false
+    }
   }
 
   render() {
@@ -141,7 +157,7 @@ class App extends Component {
 
             <Button
               onClick={()=>this.setState({showHelp:true})}
-              variant="info">&nbsp;HELP &amp; ABOUT US&nbsp;
+              variant="warning">&nbsp;HELP &amp; ABOUT US&nbsp;
             </Button>
 
             <HelpModal
@@ -241,7 +257,7 @@ function HelpModal(props) {
       </Modal.Header>
       <Modal.Body>
         <p>
-          &emsp;เลือกสถานีและสามารถเปลี่ยนไปสถานีอื่นได้ถ้ายังไม่ใส่เหรียญ แต่ถ้าใส่เหรียญแล้วต้องใส่ให้ครบตามจำนวนสถานีที่ผ่าน
+          &emsp;เลือกสถานีและสามารถเปลี่ยนไปสถานีอื่นได้ถ้ายังไม่ใส่เหรียญ แต่ถ้าใส่เหรียญแล้วต้องใส่ให้ครบตามจำนวนสถานีที่ผ่าน (ถ้าเลือกสถานี x , ก็ต้องจ่าย x เหรียญ)
         </p>
         <p>
           <b>วิธีใช้งานเว็บ</b>
@@ -289,7 +305,7 @@ function WarningModal(props) {
           <img src={ helpImg } alt="img" width="100%"/>
         </p>
         <div className="help-footer">
-          <Button variant="warning" onClick={props.onHide}>เข้าใจแล้ว !</Button>
+          <Button variant="info" onClick={props.onHide}>เข้าใจแล้ว !</Button>
         </div>
       </Modal.Body>
     </Modal>
