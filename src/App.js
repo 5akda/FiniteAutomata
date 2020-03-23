@@ -7,6 +7,8 @@ import { stateInit } from './states/stateInit'
 import { stateTrap } from './states/stateTrap'
 
 import base from './images/base.png'
+import helpImg from './images/etc/help1.jpg'
+import reader from './images/etc/readerArrow.png'
 
 const credit = "Source Code Last Update: 22-Mar-20 1:15AM"
 
@@ -208,7 +210,9 @@ class App extends Component {
             </Button>
           </div>
 
-          <b className="string">-&gt;{this.state.string}</b>
+          <b className="string">
+            <img src={ reader } height="45px" alt="arrow"/>{this.state.string}
+          </b>
 
         </div>
 
@@ -233,7 +237,7 @@ function HelpModal(props) {
       centered
     >
       <Modal.Header>
-        <h4><b>DFA เครื่องขายตั๋วรถไฟ</b></h4>
+        <h4><b>DFA เครื่องจำหน่ายตั๋วรถไฟ</b></h4>
       </Modal.Header>
       <Modal.Body>
         <p>
@@ -275,11 +279,14 @@ function WarningModal(props) {
       {...props}
       size="lg"
       aria-labelledby="contained-modal-title-vcenter"
+      className="help1"
     >
       <Modal.Body>
         <p>
           <span>&#9888;</span>
           &nbsp; โปรดป้อน String ที่เป็น Alphabet ในเซต &Sigma;{" = {1, 2, 3, 4, C} "}
+          <br/>หรือเลือกกดปุ่มด้านล่าง
+          <img src={ helpImg } alt="img" width="100%"/>
         </p>
         <div className="help-footer">
           <Button variant="warning" onClick={props.onHide}>เข้าใจแล้ว !</Button>
