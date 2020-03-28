@@ -4,13 +4,12 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import { Button, InputGroup, FormControl, Form, Navbar, Nav, Modal } from 'react-bootstrap';
 
 import { stateInit } from './states/stateInit'
-import { stateTrap } from './states/stateTrap'
 
 import base from './images/base.png'
-import helpImg from './images/etc/help1.jpg'
 import reader from './images/etc/readerArrow.png'
+import helpImg from './images/etc/help1.jpg'
 
-const credit = "Source Code Last Update: 22-Mar-20 1:15AM"
+const credit = "Source Code Last Update: 29-Mar-20 01:15AM"
 
 class App extends Component {
 
@@ -38,7 +37,7 @@ class App extends Component {
   }
 
   handleEnterClick() {
-    if(this.state.text.match("[^1-4Cc]")==null) {
+    if(this.state.text.match("[^1-4CRcr]")==null) {
       this.handleRestartClick()
       this.setState({ 
         string: ' '+this.state.text,
@@ -81,12 +80,9 @@ class App extends Component {
           outputFromState = stateInit(presentChar)
           break
         }
-        case 'Trap': {
-          outputFromState = stateTrap(presentChar)
-          break
-        }
         default: {
           console.log('Something went wrong')
+          
         }
       }
       
@@ -174,7 +170,7 @@ class App extends Component {
               <InputGroup.Text>String</InputGroup.Text>
             </InputGroup.Prepend>
                 <FormControl
-                  placeholder="e.g.3CCC12CC"
+                  placeholder="e.g.2CC43C1R1C"
                   value={this.state.text}
                   onChange={ (e)=>this.setState({text: e.target.value}) }
                 />
@@ -208,6 +204,9 @@ class App extends Component {
             </Button>
             <Button variant="outline-primary" onClick={ ()=>this.handleCharClick('C') }>
               C : Insert 1 Coin
+            </Button>
+            <Button variant="outline-primary" onClick={ ()=>this.handleCharClick('R') }>
+              R : Reset
             </Button>
           </div>
           
@@ -257,13 +256,16 @@ function HelpModal(props) {
       </Modal.Header>
       <Modal.Body>
         <p>
-          &emsp;เลือกสถานีและสามารถเปลี่ยนไปสถานีอื่นได้ถ้ายังไม่ใส่เหรียญ แต่ถ้าใส่เหรียญแล้วต้องใส่ให้ครบตามจำนวนสถานีที่ผ่าน (ถ้าเลือกสถานี x , ก็ต้องจ่าย x เหรียญ)
+          &emsp;เลือกสถานีและสามารถเปลี่ยนไปสถานีอื่นได้ถ้ายังไม่ใส่เหรียญ
+          แต่เมื่อใส่เหรียญแล้วต้องใส่ให้ครบตามจำนวนสถานีที่ผ่าน
+          (เช่นเลือกสถานี x , ก็ต้องจ่าย x เหรียญ)
+          และถ้าหากทำขั้นตอนผิดพลาดให้กด Reset
         </p>
         <p>
           <b>วิธีใช้งานเว็บ</b>
           <ol>
             <li>
-              พิมพ์ String ที่มี Symbol ใน &Sigma;{" = {1, 2, 3, 4, C} "} หรือกดปุ่มเพื่อเพิ่ม Symbol
+              พิมพ์ String ที่มี Symbol ใน &Sigma;{" = {1, 2, 3, 4, C, R} "} หรือกดปุ่มเพื่อเพิ่ม Symbol
             </li>
             <li>
               กด Enter เพื่อนำ Input ไปใส่ใน DFA
@@ -300,7 +302,7 @@ function WarningModal(props) {
       <Modal.Body>
         <p>
           <span>&#9888;</span>
-          &nbsp; โปรดป้อน String ที่เป็น Alphabet ในเซต &Sigma;{" = {1, 2, 3, 4, C} "}
+          &nbsp; โปรดป้อน String ที่เป็น Alphabet ในเซต &Sigma;{" = {1, 2, 3, 4, C, R} "}
           <br/>หรือเลือกกดปุ่มด้านล่าง
           <img src={ helpImg } alt="img" width="100%"/>
         </p>
@@ -313,5 +315,12 @@ function WarningModal(props) {
 }
 
 
-//npm start
-//npm run deploy
+//ถ้าจะลองรันเว็บ ให้ลติดตั้ง Node.js
+//จากนั้นใช้ cmd เข้าไปใน folder งาน
+//แล้วพิมพ์คำสั่ง npm start
+
+
+//อย่าไปยุ่งกับ Branch gh-pages ใน Git
+
+
+//ใช้ตอน Deploy จริงเท่านั้น: npm run deploy
