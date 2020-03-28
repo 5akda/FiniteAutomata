@@ -1,34 +1,28 @@
 {
   "files": {
     "main.css": "/FiniteAutomata/static/css/main.6e621839.chunk.css",
-    "main.js": "/FiniteAutomata/static/js/main.756de7ed.chunk.js",
-    "main.js.map": "/FiniteAutomata/static/js/main.756de7ed.chunk.js.map",
+    "main.js": "/FiniteAutomata/static/js/main.93347926.chunk.js",
+    "main.js.map": "/FiniteAutomata/static/js/main.93347926.chunk.js.map",
     "runtime-main.js": "/FiniteAutomata/static/js/runtime-main.6af22fec.js",
     "runtime-main.js.map": "/FiniteAutomata/static/js/runtime-main.6af22fec.js.map",
     "static/css/2.47e06e2e.chunk.css": "/FiniteAutomata/static/css/2.47e06e2e.chunk.css",
-    "static/js/2.a9567d7e.chunk.js": "/FiniteAutomata/static/js/2.a9567d7e.chunk.js",
-    "static/js/2.a9567d7e.chunk.js.map": "/FiniteAutomata/static/js/2.a9567d7e.chunk.js.map",
+    "static/js/2.2e3a794a.chunk.js": "/FiniteAutomata/static/js/2.2e3a794a.chunk.js",
+    "static/js/2.2e3a794a.chunk.js.map": "/FiniteAutomata/static/js/2.2e3a794a.chunk.js.map",
     "index.html": "/FiniteAutomata/index.html",
-    "precache-manifest.b2d554d5a798af877d19e546d424ba7e.js": "/FiniteAutomata/precache-manifest.b2d554d5a798af877d19e546d424ba7e.js",
+    "precache-manifest.44c767a5c0edc1ec011d7ee7faa02a7e.js": "/FiniteAutomata/precache-manifest.44c767a5c0edc1ec011d7ee7faa02a7e.js",
     "service-worker.js": "/FiniteAutomata/service-worker.js",
     "static/css/2.47e06e2e.chunk.css.map": "/FiniteAutomata/static/css/2.47e06e2e.chunk.css.map",
     "static/css/main.6e621839.chunk.css.map": "/FiniteAutomata/static/css/main.6e621839.chunk.css.map",
-    "static/js/2.a9567d7e.chunk.js.LICENSE.txt": "/FiniteAutomata/static/js/2.a9567d7e.chunk.js.LICENSE.txt",
-    "static/media/base.png": "/FiniteAutomata/static/media/base.404faf26.png",
-    "static/media/help1.jpg": "/FiniteAutomata/static/media/help1.460cb720.jpg",
-    "static/media/init-1.png": "/FiniteAutomata/static/media/init-1.57b60d43.png",
-    "static/media/init-2.png": "/FiniteAutomata/static/media/init-2.8ceb5be3.png",
-    "static/media/init-3.png": "/FiniteAutomata/static/media/init-3.a12941ba.png",
-    "static/media/init-c.png": "/FiniteAutomata/static/media/init-c.27f91b28.png",
-    "static/media/init-empty.png": "/FiniteAutomata/static/media/init-empty.039e7f3c.png",
-    "static/media/trap-123c.png": "/FiniteAutomata/static/media/trap-123c.492901d7.png",
-    "static/media/trap-empty.png": "/FiniteAutomata/static/media/trap-empty.cbcfa528.png"
+    "static/js/2.2e3a794a.chunk.js.LICENSE.txt": "/FiniteAutomata/static/js/2.2e3a794a.chunk.js.LICENSE.txt",
+    "static/media/base.png": "/FiniteAutomata/static/media/base.9b3e863f.png",
+    "static/media/help1.jpg": "/FiniteAutomata/static/media/help1.cbf52a5c.jpg",
+    "static/media/init.png": "/FiniteAutomata/static/media/init.9850fadd.png"
   },
   "entrypoints": [
     "static/js/runtime-main.6af22fec.js",
     "static/css/2.47e06e2e.chunk.css",
-    "static/js/2.a9567d7e.chunk.js",
+    "static/js/2.2e3a794a.chunk.js",
     "static/css/main.6e621839.chunk.css",
-    "static/js/main.756de7ed.chunk.js"
+    "static/js/main.93347926.chunk.js"
   ]
 }
