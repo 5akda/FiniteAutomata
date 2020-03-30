@@ -1,28 +1,29 @@
 {
   "files": {
-    "main.css": "/FiniteAutomata/static/css/main.6e621839.chunk.css",
-    "main.js": "/FiniteAutomata/static/js/main.93347926.chunk.js",
-    "main.js.map": "/FiniteAutomata/static/js/main.93347926.chunk.js.map",
+    "main.css": "/FiniteAutomata/static/css/main.077bf83e.chunk.css",
+    "main.js": "/FiniteAutomata/static/js/main.34fcaf38.chunk.js",
+    "main.js.map": "/FiniteAutomata/static/js/main.34fcaf38.chunk.js.map",
     "runtime-main.js": "/FiniteAutomata/static/js/runtime-main.6af22fec.js",
     "runtime-main.js.map": "/FiniteAutomata/static/js/runtime-main.6af22fec.js.map",
     "static/css/2.47e06e2e.chunk.css": "/FiniteAutomata/static/css/2.47e06e2e.chunk.css",
-    "static/js/2.2e3a794a.chunk.js": "/FiniteAutomata/static/js/2.2e3a794a.chunk.js",
-    "static/js/2.2e3a794a.chunk.js.map": "/FiniteAutomata/static/js/2.2e3a794a.chunk.js.map",
+    "static/js/2.f19d1011.chunk.js": "/FiniteAutomata/static/js/2.f19d1011.chunk.js",
+    "static/js/2.f19d1011.chunk.js.map": "/FiniteAutomata/static/js/2.f19d1011.chunk.js.map",
     "index.html": "/FiniteAutomata/index.html",
-    "precache-manifest.44c767a5c0edc1ec011d7ee7faa02a7e.js": "/FiniteAutomata/precache-manifest.44c767a5c0edc1ec011d7ee7faa02a7e.js",
+    "precache-manifest.ceb4bf07850a007938071654dfa09293.js": "/FiniteAutomata/precache-manifest.ceb4bf07850a007938071654dfa09293.js",
     "service-worker.js": "/FiniteAutomata/service-worker.js",
     "static/css/2.47e06e2e.chunk.css.map": "/FiniteAutomata/static/css/2.47e06e2e.chunk.css.map",
-    "static/css/main.6e621839.chunk.css.map": "/FiniteAutomata/static/css/main.6e621839.chunk.css.map",
-    "static/js/2.2e3a794a.chunk.js.LICENSE.txt": "/FiniteAutomata/static/js/2.2e3a794a.chunk.js.LICENSE.txt",
-    "static/media/base.png": "/FiniteAutomata/static/media/base.9b3e863f.png",
+    "static/css/main.077bf83e.chunk.css.map": "/FiniteAutomata/static/css/main.077bf83e.chunk.css.map",
+    "static/js/2.f19d1011.chunk.js.LICENSE.txt": "/FiniteAutomata/static/js/2.f19d1011.chunk.js.LICENSE.txt",
+    "static/media/Fault.png": "/FiniteAutomata/static/media/Fault.2699ab69.png",
+    "static/media/Init.png": "/FiniteAutomata/static/media/Init.c066f9b9.png",
     "static/media/help1.jpg": "/FiniteAutomata/static/media/help1.cbf52a5c.jpg",
-    "static/media/init.png": "/FiniteAutomata/static/media/init.9850fadd.png"
+    "static/media/mockup.png": "/FiniteAutomata/static/media/mockup.404faf26.png"
   },
   "entrypoints": [
     "static/js/runtime-main.6af22fec.js",
     "static/css/2.47e06e2e.chunk.css",
-    "static/js/2.2e3a794a.chunk.js",
-    "static/css/main.6e621839.chunk.css",
-    "static/js/main.93347926.chunk.js"
+    "static/js/2.f19d1011.chunk.js",
+    "static/css/main.077bf83e.chunk.css",
+    "static/js/main.34fcaf38.chunk.js"
   ]
 }
