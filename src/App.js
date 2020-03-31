@@ -1,15 +1,17 @@
-import React, { Component } from 'react'
-import './App.css'
-import 'bootstrap/dist/css/bootstrap.min.css';
-import { Button, InputGroup, FormControl, Form, Navbar, Nav, Modal } from 'react-bootstrap';
+import React, { Component } from "react";
+import "./App.css"
+import "bootstrap/dist/css/bootstrap.min.css";
+import { Button, InputGroup, FormControl, Form, Navbar, Nav, Modal } from "react-bootstrap";
 
-import { stateInit } from './states/stateInit'
+import { stateInit } from "./states/stateInit";
+import { stateFault } from "./states/stateFault";
+import { stateStation1 } from "./states/stateStation1";
 
-import base from './images/base.png'
-import reader from './images/etc/readerArrow.png'
-import helpImg from './images/etc/help1.jpg'
+import base from './images/Base.png';
+import reader from './images/etc/readerArrow.png';
+import helpImg from './images/etc/help1.jpg';
 
-const credit = "Source Code Last Update: 29-Mar-20 01:15AM"
+const credit = 'Source Code Last Update: 29-Mar-20 01:15AM';
 
 class App extends Component {
 
@@ -27,71 +29,78 @@ class App extends Component {
       showWarning: false,
       footMsg: credit
     }
-    this.handleEnterClick = this.handleEnterClick.bind(this)
-    this.handleNextClick = this.handleNextClick.bind(this)
-    this.handleRestartClick = this.handleRestartClick.bind(this)
-    this.handleClearClick = this.handleClearClick.bind(this)
-    this.handleAutoplayClick = this.handleAutoplayClick.bind(this)
-    this.handleCharClick = this.handleCharClick.bind(this)
-    this.isFinishState = this.isFinishState.bind(this)
+    this.handleEnterClick = this.handleEnterClick.bind(this);
+    this.handleNextClick = this.handleNextClick.bind(this);
+    this.handleRestartClick = this.handleRestartClick.bind(this);
+    this.handleClearClick = this.handleClearClick.bind(this);
+    this.handleAutoplayClick = this.handleAutoplayClick.bind(this);
+    this.handleCharClick = this.handleCharClick.bind(this);
+    this.isFinishState = this.isFinishState.bind(this);
   }
 
   handleEnterClick() {
     if(this.state.text.match("[^1-4CRcr]")==null) {
-      this.handleRestartClick()
+      this.handleRestartClick();
       this.setState({ 
         string: ' '+this.state.text,
         unclickable: false,
         nextbutton: 'Start'
-      })
+      });
     }
     else {
-      this.setState({ showWarning: true })
+      this.setState({ showWarning: true });
     }
   }
 
   handleNextClick() {
     if(this.state.nextbutton === 'Restart'){
-      this.handleRestartClick()
+      this.handleRestartClick();
     }
     else{
-      this.setState({ nextbutton: 'Next' })
+      this.setState({ nextbutton: 'Next' });
 
-      var presentChar = null
+      var presentChar = null;
 
       if(this.state.string.length > 1) {
-        presentChar = this.state.string.charAt(1).toUpperCase()
+        presentChar = this.state.string.charAt(1).toUpperCase();
       }
       else if(this.state.string.length === 1){
-        presentChar = ' '
+        presentChar = ' ';
       }
       else if(this.state.string.length === 0) {
-        this.setState({ nextbutton: 'Restart' })
-        return 0
+        this.setState({ nextbutton: 'Restart' });
+        return 0;
       }
 
-      this.setState({ string: this.state.string.substring(1) })
+      this.setState({ string: this.state.string.substring(1) });
       
       // ----- STATE SELECTOR ----- //
-      let outputFromState = null
-      let q = this.state.nextState
+      let outputFromState = null;
+      let q = this.state.nextState;
       switch(q){
         case 'Init': {
-          outputFromState = stateInit(presentChar)
-          break
+          outputFromState = stateInit(presentChar);
+          break;
+        }
+        case 'Fault': {
+          outputFromState = stateFault(presentChar);
+          break;
+        }
+        case 'Station1': {
+          outputFromState = stateStation1(presentChar);
+          break;
         }
         default: {
-          console.log('Something went wrong')
-          
+          console.log('Something went wrong');
         }
       }
       
-      this.isFinishState(q)
+      this.isFinishState(q);
 
       this.setState({
         img: outputFromState[0],
         nextState: outputFromState[1]
-      })
+      });
     }
   }
 
@@ -102,8 +111,8 @@ class App extends Component {
       img: base,
       nextbutton: 'Start',
       footMsg: credit
-    })
-    clearInterval(this.state.looper)
+    });
+    clearInterval(this.state.looper);
   }
 
   handleClearClick() {
@@ -115,28 +124,28 @@ class App extends Component {
       unclickable: true,
       nextbutton: 'Start',
       footMsg: credit
-    })
-    clearInterval(this.state.looper)
+    });
+    clearInterval(this.state.looper);
   }
 
   handleAutoplayClick() {
     // - Iterate - //
-    this.setState({looper: setInterval(() => this.handleNextClick(),1800)})
+    this.setState({looper: setInterval(() => this.handleNextClick(),1800)});
   }
 
   handleCharClick(char) {
     // - Insert a char by clicking a button - //
-    this.setState({ text: this.state.text + char })
+    this.setState({ text: this.state.text + char });
   }
 
   isFinishState(state) {
     if(state === "Done"){
-      this.setState({ footMsg: "Accept this string!" })
-      return true
+      this.setState({ footMsg: "Accept this string!" });
+      return true;
     }
     else{
-      this.setState({ footMsg: credit })
-      return false
+      this.setState({ footMsg: credit });
+      return false;
     }
   }
 
@@ -190,22 +199,22 @@ class App extends Component {
           />
 
           <div className="help">
-            <Button variant="outline-primary" onClick={()=>this.handleCharClick('1')}>
+            <Button variant="outline-primary" onClick={()=>this.handleCharClick("1")}>
               1 : Select Station 1
             </Button>
-            <Button variant="outline-primary" onClick={ ()=>this.handleCharClick('2') }>
+            <Button variant="outline-primary" onClick={()=>this.handleCharClick("2")}>
               2 : Select Station 2
             </Button>
-            <Button variant="outline-primary" onClick={ ()=>this.handleCharClick('3') }>
+            <Button variant="outline-primary" onClick={()=>this.handleCharClick("3")}>
               3 : Select Station 3
             </Button>
-            <Button variant="outline-primary" onClick={ ()=>this.handleCharClick('4') }>
+            <Button variant="outline-primary" onClick={()=>this.handleCharClick("4")}>
               4 : Select Station 4
             </Button>
-            <Button variant="outline-primary" onClick={ ()=>this.handleCharClick('C') }>
+            <Button variant="outline-primary" onClick={()=>this.handleCharClick("C")}>
               C : Insert 1 Coin
             </Button>
-            <Button variant="outline-primary" onClick={ ()=>this.handleCharClick('R') }>
+            <Button variant="outline-primary" onClick={()=>this.handleCharClick("R")}>
               R : Reset
             </Button>
           </div>
@@ -215,12 +224,12 @@ class App extends Component {
         <div className="Layout-controller">
           <div className="Layout-buttonzone">
             <Button variant="outline-warning"
-              onClick={ ()=>this.handleNextClick() } 
+              onClick={()=>this.handleNextClick()} 
               disabled={this.state.unclickable}>{this.state.nextbutton}
             </Button>
             
             <Button variant="outline-warning"
-              onClick={ ()=>this.handleAutoplayClick() }
+              onClick={()=>this.handleAutoplayClick()}
               disabled={this.state.unclickable}>Autoplay
             </Button>
           </div>

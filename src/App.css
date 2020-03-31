@@ -112,3 +112,7 @@ img {
 .Layout-body a {
   color: #61dafb;
 }
+
+.string :first-child {
+  padding-right: 1px;
+}

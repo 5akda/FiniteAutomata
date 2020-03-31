@@ -1,8 +1,8 @@
 // import รูปเข้ามาตรงนี้
-import img from "../images/Init.png";
+import img from "../images/Station1.png";
 
 // เขียน Function ที่ returns รูป กับ ชื่อ state ถัดไป
-export function stateInit(input) {
+export function stateStation1(input) {
   switch(input) {
     case "1": {
       return [img, 'Station1'];
@@ -16,11 +16,14 @@ export function stateInit(input) {
     case "4": {
       return [img, 'Station4'];
     }
-    case " ": {
+    case "C": {
+      return [img, 'Done'];
+    }
+    case "R": {
       return [img, 'Init'];
     }
     default: {
-      return [img, 'Fault'];
+      return [img, 'Station1'];
     }
   }
 }
