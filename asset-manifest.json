@@ -1,29 +1,38 @@
 {
   "files": {
-    "main.css": "/FiniteAutomata/static/css/main.077bf83e.chunk.css",
-    "main.js": "/FiniteAutomata/static/js/main.34fcaf38.chunk.js",
-    "main.js.map": "/FiniteAutomata/static/js/main.34fcaf38.chunk.js.map",
+    "main.css": "/FiniteAutomata/static/css/main.87b1db9d.chunk.css",
+    "main.js": "/FiniteAutomata/static/js/main.79fd7e67.chunk.js",
+    "main.js.map": "/FiniteAutomata/static/js/main.79fd7e67.chunk.js.map",
     "runtime-main.js": "/FiniteAutomata/static/js/runtime-main.6af22fec.js",
     "runtime-main.js.map": "/FiniteAutomata/static/js/runtime-main.6af22fec.js.map",
     "static/css/2.47e06e2e.chunk.css": "/FiniteAutomata/static/css/2.47e06e2e.chunk.css",
-    "static/js/2.f19d1011.chunk.js": "/FiniteAutomata/static/js/2.f19d1011.chunk.js",
-    "static/js/2.f19d1011.chunk.js.map": "/FiniteAutomata/static/js/2.f19d1011.chunk.js.map",
+    "static/js/2.0304d6f8.chunk.js": "/FiniteAutomata/static/js/2.0304d6f8.chunk.js",
+    "static/js/2.0304d6f8.chunk.js.map": "/FiniteAutomata/static/js/2.0304d6f8.chunk.js.map",
     "index.html": "/FiniteAutomata/index.html",
-    "precache-manifest.ceb4bf07850a007938071654dfa09293.js": "/FiniteAutomata/precache-manifest.ceb4bf07850a007938071654dfa09293.js",
+    "precache-manifest.935a88ef27bd122cccd333e827220f73.js": "/FiniteAutomata/precache-manifest.935a88ef27bd122cccd333e827220f73.js",
     "service-worker.js": "/FiniteAutomata/service-worker.js",
     "static/css/2.47e06e2e.chunk.css.map": "/FiniteAutomata/static/css/2.47e06e2e.chunk.css.map",
-    "static/css/main.077bf83e.chunk.css.map": "/FiniteAutomata/static/css/main.077bf83e.chunk.css.map",
-    "static/js/2.f19d1011.chunk.js.LICENSE.txt": "/FiniteAutomata/static/js/2.f19d1011.chunk.js.LICENSE.txt",
+    "static/css/main.87b1db9d.chunk.css.map": "/FiniteAutomata/static/css/main.87b1db9d.chunk.css.map",
+    "static/js/2.0304d6f8.chunk.js.LICENSE.txt": "/FiniteAutomata/static/js/2.0304d6f8.chunk.js.LICENSE.txt",
+    "static/media/1morecoin.png": "/FiniteAutomata/static/media/1morecoin.a54fda66.png",
+    "static/media/2morecoins.png": "/FiniteAutomata/static/media/2morecoins.190b4f5f.png",
+    "static/media/3morecoins.png": "/FiniteAutomata/static/media/3morecoins.14a14ab7.png",
+    "static/media/Accept.png": "/FiniteAutomata/static/media/Accept.aa060adb.png",
+    "static/media/Base.png": "/FiniteAutomata/static/media/Base.9c9c02de.png",
+    "static/media/Done.png": "/FiniteAutomata/static/media/Done.c171ffd1.png",
     "static/media/Fault.png": "/FiniteAutomata/static/media/Fault.2699ab69.png",
     "static/media/Init.png": "/FiniteAutomata/static/media/Init.c066f9b9.png",
-    "static/media/help1.jpg": "/FiniteAutomata/static/media/help1.cbf52a5c.jpg",
-    "static/media/mockup.png": "/FiniteAutomata/static/media/mockup.404faf26.png"
+    "static/media/Station1.png": "/FiniteAutomata/static/media/Station1.3fd10a9a.png",
+    "static/media/Station2.png": "/FiniteAutomata/static/media/Station2.e9dc443e.png",
+    "static/media/Station3.png": "/FiniteAutomata/static/media/Station3.4a72efd1.png",
+    "static/media/Station4.png": "/FiniteAutomata/static/media/Station4.0f4c9eb0.png",
+    "static/media/help1.jpg": "/FiniteAutomata/static/media/help1.cbf52a5c.jpg"
   },
   "entrypoints": [
     "static/js/runtime-main.6af22fec.js",
     "static/css/2.47e06e2e.chunk.css",
-    "static/js/2.f19d1011.chunk.js",
-    "static/css/main.077bf83e.chunk.css",
-    "static/js/main.34fcaf38.chunk.js"
+    "static/js/2.0304d6f8.chunk.js",
+    "static/css/main.87b1db9d.chunk.css",
+    "static/js/main.79fd7e67.chunk.js"
   ]
 }
