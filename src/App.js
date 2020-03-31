@@ -6,12 +6,20 @@ import { Button, InputGroup, FormControl, Form, Navbar, Nav, Modal } from "react
 import { stateInit } from "./states/stateInit";
 import { stateFault } from "./states/stateFault";
 import { stateStation1 } from "./states/stateStation1";
+import { stateStation2 } from "./states/stateStation2";
+import { stateStation3 } from "./states/stateStation3";
+import { stateStation4 } from "./states/stateStation4";
+import { state1MoreCoin } from "./states/state1MoreCoin";
+import { state2MoreCoins } from "./states/state2MoreCoins";
+import { state3MoreCoins } from "./states/state3MoreCoins";
+import { stateDone } from "./states/stateDone";
 
 import base from './images/Base.png';
+import accept from './images/Accept.png';
 import reader from './images/etc/readerArrow.png';
 import helpImg from './images/etc/help1.jpg';
 
-const credit = 'Source Code Last Update: 29-Mar-20 01:15AM';
+const credit = 'Source Code 0.2.331';
 
 class App extends Component {
 
@@ -26,8 +34,7 @@ class App extends Component {
       nextbutton: 'Start',
       looper: null,
       showHelp: true,
-      showWarning: false,
-      footMsg: credit
+      showWarning: false
     }
     this.handleEnterClick = this.handleEnterClick.bind(this);
     this.handleNextClick = this.handleNextClick.bind(this);
@@ -35,14 +42,13 @@ class App extends Component {
     this.handleClearClick = this.handleClearClick.bind(this);
     this.handleAutoplayClick = this.handleAutoplayClick.bind(this);
     this.handleCharClick = this.handleCharClick.bind(this);
-    this.isFinishState = this.isFinishState.bind(this);
   }
 
   handleEnterClick() {
     if(this.state.text.match("[^1-4CRcr]")==null) {
       this.handleRestartClick();
       this.setState({ 
-        string: ' '+this.state.text,
+        string: ' '+this.state.text.toUpperCase(),
         unclickable: false,
         nextbutton: 'Start'
       });
@@ -59,16 +65,18 @@ class App extends Component {
     else{
       this.setState({ nextbutton: 'Next' });
 
-      var presentChar = null;
+      let presentChar = null;
+      let inputLength = this.state.string.length;
 
-      if(this.state.string.length > 1) {
-        presentChar = this.state.string.charAt(1).toUpperCase();
+      if(inputLength > 1) {
+        presentChar = this.state.string.charAt(1);
       }
-      else if(this.state.string.length === 1){
+      else if(inputLength === 1){
         presentChar = ' ';
       }
-      else if(this.state.string.length === 0) {
+      else if(inputLength === 0) {
         this.setState({ nextbutton: 'Restart' });
+        if(this.state.nextState === 'Done') this.setState({ img: accept });
         return 0;
       }
 
@@ -90,13 +98,38 @@ class App extends Component {
           outputFromState = stateStation1(presentChar);
           break;
         }
+        case 'Station2': {
+          outputFromState = stateStation2(presentChar);
+          break;
+        }
+        case 'Station3': {
+          outputFromState = stateStation3(presentChar);
+          break;
+        }
+        case 'Station4': {
+          outputFromState = stateStation4(presentChar);
+          break;
+        }
+        case '1MoreCoin': {
+          outputFromState = state1MoreCoin(presentChar);
+          break;
+        }
+        case '2MoreCoins': {
+          outputFromState = state2MoreCoins(presentChar);
+          break;
+        }
+        case '3MoreCoins': {
+          outputFromState = state3MoreCoins(presentChar);
+          break;
+        }
+        case 'Done': {
+          outputFromState = stateDone(presentChar);
+          break;
+        }
         default: {
           console.log('Something went wrong');
         }
       }
-      
-      this.isFinishState(q);
-
       this.setState({
         img: outputFromState[0],
         nextState: outputFromState[1]
@@ -109,8 +142,7 @@ class App extends Component {
       string: ' '+this.state.text,
       nextState: 'Init',
       img: base,
-      nextbutton: 'Start',
-      footMsg: credit
+      nextbutton: 'Start'
     });
     clearInterval(this.state.looper);
   }
@@ -122,8 +154,7 @@ class App extends Component {
       nextState: 'Init',
       img: base,
       unclickable: true,
-      nextbutton: 'Start',
-      footMsg: credit
+      nextbutton: 'Start'
     });
     clearInterval(this.state.looper);
   }
@@ -136,17 +167,6 @@ class App extends Component {
   handleCharClick(char) {
     // - Insert a char by clicking a button - //
     this.setState({ text: this.state.text + char });
-  }
-
-  isFinishState(state) {
-    if(state === "Done"){
-      this.setState({ footMsg: "Accept this string!" });
-      return true;
-    }
-    else{
-      this.setState({ footMsg: credit });
-      return false;
-    }
   }
 
   render() {
@@ -243,7 +263,7 @@ class App extends Component {
         <div className="Layout-body">
           <img src={ this.state.img } alt="img"/>
           <br/>
-          <a href="https://github.com/parzival48/FiniteAutomata">{ this.state.footMsg }</a>
+          <a href="https://github.com/parzival48/FiniteAutomata">{ credit }</a>
         </div>
       </div>
     );
@@ -270,7 +290,7 @@ function HelpModal(props) {
           (เช่นเลือกสถานี x , ก็ต้องจ่าย x เหรียญ)
           และถ้าหากทำขั้นตอนผิดพลาดให้กด Reset
         </p>
-        <p>
+        <div>
           <b>วิธีใช้งานเว็บ</b>
           <ol>
             <li>
@@ -291,7 +311,7 @@ function HelpModal(props) {
             <li>60010915&emsp;นายวสวัตติ์&ensp;บุณยฤทธิกิจ</li>
             <li>60010968&emsp;นายศักดา&ensp;สุวรรณธีรางกูร</li>
           </ul>
-        </p>
+        </div>
         <div className="help-footer">
           <Button variant="info" onClick={props.onHide}>เข้าใจแล้ว !</Button>
         </div>
@@ -333,3 +353,6 @@ function WarningModal(props) {
 
 
 //ใช้ตอน Deploy จริงเท่านั้น: npm run deploy
+
+//Test Case #1 CR1C2CR2C1R2CC3CR3C2R3CC3R3CCC4CR4C3R4CCCC <Accept>
+//Test Case #2 4CCCC4C1R4CR3CCC3CC2R3C4R3CR2CC2C4R2CR1C <Accept>

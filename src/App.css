@@ -70,10 +70,6 @@ h5 {
   height: 40px;
 }
 
-.link {
-  color: #61dafb;
-}
-
 img {
   margin-top: 15px;
   max-height: 70vh;
@@ -110,7 +106,7 @@ img {
 }
 
 .Layout-body a {
-  color: #61dafb;
+  color: #54ff44;
 }
 
 .string :first-child {
