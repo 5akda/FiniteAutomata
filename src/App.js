@@ -3,23 +3,14 @@ import "./App.css"
 import "bootstrap/dist/css/bootstrap.min.css";
 import { Button, InputGroup, FormControl, Form, Navbar, Nav, Modal } from "react-bootstrap";
 
-import { stateInit } from "./states/stateInit";
-import { stateFault } from "./states/stateFault";
-import { stateStation1 } from "./states/stateStation1";
-import { stateStation2 } from "./states/stateStation2";
-import { stateStation3 } from "./states/stateStation3";
-import { stateStation4 } from "./states/stateStation4";
-import { state1MoreCoin } from "./states/state1MoreCoin";
-import { state2MoreCoins } from "./states/state2MoreCoins";
-import { state3MoreCoins } from "./states/state3MoreCoins";
-import { stateDone } from "./states/stateDone";
+import { transitionFunction } from './states/transition';
 
 import base from './images/Base.png';
 import accept from './images/Accept.png';
 import reader from './images/etc/readerArrow.png';
 import helpImg from './images/etc/help1.jpg';
 
-const credit = 'Source Code 0.2.331';
+const credit = 'Source Code 0.2.408';
 
 class App extends Component {
 
@@ -82,54 +73,8 @@ class App extends Component {
 
       this.setState({ string: this.state.string.substring(1) });
       
-      // ----- STATE SELECTOR ----- //
-      let outputFromState = null;
-      let q = this.state.nextState;
-      switch(q){
-        case 'Init': {
-          outputFromState = stateInit(presentChar);
-          break;
-        }
-        case 'Fault': {
-          outputFromState = stateFault(presentChar);
-          break;
-        }
-        case 'Station1': {
-          outputFromState = stateStation1(presentChar);
-          break;
-        }
-        case 'Station2': {
-          outputFromState = stateStation2(presentChar);
-          break;
-        }
-        case 'Station3': {
-          outputFromState = stateStation3(presentChar);
-          break;
-        }
-        case 'Station4': {
-          outputFromState = stateStation4(presentChar);
-          break;
-        }
-        case '1MoreCoin': {
-          outputFromState = state1MoreCoin(presentChar);
-          break;
-        }
-        case '2MoreCoins': {
-          outputFromState = state2MoreCoins(presentChar);
-          break;
-        }
-        case '3MoreCoins': {
-          outputFromState = state3MoreCoins(presentChar);
-          break;
-        }
-        case 'Done': {
-          outputFromState = stateDone(presentChar);
-          break;
-        }
-        default: {
-          console.log('Something went wrong');
-        }
-      }
+      let outputFromState = transitionFunction(this.state.nextState, presentChar);
+
       this.setState({
         img: outputFromState[0],
         nextState: outputFromState[1]
@@ -173,7 +118,7 @@ class App extends Component {
     return (
       <div className="Layout-all">
 
-        <Navbar variant="dark">
+        <Navbar className="navbar" variant="dark">
           <Navbar.Brand>Ticket Vendor</Navbar.Brand>
           <Nav className="mr-auto">
             
