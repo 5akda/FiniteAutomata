@@ -1,19 +1,19 @@
 {
   "files": {
-    "main.css": "/FiniteAutomata/static/css/main.87b1db9d.chunk.css",
-    "main.js": "/FiniteAutomata/static/js/main.ebd13480.chunk.js",
-    "main.js.map": "/FiniteAutomata/static/js/main.ebd13480.chunk.js.map",
+    "main.css": "/FiniteAutomata/static/css/main.fa6f15d7.chunk.css",
+    "main.js": "/FiniteAutomata/static/js/main.d30e7cd2.chunk.js",
+    "main.js.map": "/FiniteAutomata/static/js/main.d30e7cd2.chunk.js.map",
     "runtime-main.js": "/FiniteAutomata/static/js/runtime-main.6af22fec.js",
     "runtime-main.js.map": "/FiniteAutomata/static/js/runtime-main.6af22fec.js.map",
     "static/css/2.47e06e2e.chunk.css": "/FiniteAutomata/static/css/2.47e06e2e.chunk.css",
-    "static/js/2.4e6305dc.chunk.js": "/FiniteAutomata/static/js/2.4e6305dc.chunk.js",
-    "static/js/2.4e6305dc.chunk.js.map": "/FiniteAutomata/static/js/2.4e6305dc.chunk.js.map",
+    "static/js/2.086fb3bc.chunk.js": "/FiniteAutomata/static/js/2.086fb3bc.chunk.js",
+    "static/js/2.086fb3bc.chunk.js.map": "/FiniteAutomata/static/js/2.086fb3bc.chunk.js.map",
     "index.html": "/FiniteAutomata/index.html",
-    "precache-manifest.b42d9519773c1858d9c43781de46d12f.js": "/FiniteAutomata/precache-manifest.b42d9519773c1858d9c43781de46d12f.js",
+    "precache-manifest.c71031e5e5b2fff7dfa2392d76007267.js": "/FiniteAutomata/precache-manifest.c71031e5e5b2fff7dfa2392d76007267.js",
     "service-worker.js": "/FiniteAutomata/service-worker.js",
     "static/css/2.47e06e2e.chunk.css.map": "/FiniteAutomata/static/css/2.47e06e2e.chunk.css.map",
-    "static/css/main.87b1db9d.chunk.css.map": "/FiniteAutomata/static/css/main.87b1db9d.chunk.css.map",
-    "static/js/2.4e6305dc.chunk.js.LICENSE.txt": "/FiniteAutomata/static/js/2.4e6305dc.chunk.js.LICENSE.txt",
+    "static/css/main.fa6f15d7.chunk.css.map": "/FiniteAutomata/static/css/main.fa6f15d7.chunk.css.map",
+    "static/js/2.086fb3bc.chunk.js.LICENSE.txt": "/FiniteAutomata/static/js/2.086fb3bc.chunk.js.LICENSE.txt",
     "static/media/1morecoin.png": "/FiniteAutomata/static/media/1morecoin.0dcc3476.png",
     "static/media/2morecoins.png": "/FiniteAutomata/static/media/2morecoins.a1ddf3ee.png",
     "static/media/3morecoins.png": "/FiniteAutomata/static/media/3morecoins.701c8ab9.png",
@@ -31,8 +31,8 @@
   "entrypoints": [
     "static/js/runtime-main.6af22fec.js",
     "static/css/2.47e06e2e.chunk.css",
-    "static/js/2.4e6305dc.chunk.js",
-    "static/css/main.87b1db9d.chunk.css",
-    "static/js/main.ebd13480.chunk.js"
+    "static/js/2.086fb3bc.chunk.js",
+    "static/css/main.fa6f15d7.chunk.css",
+    "static/js/main.d30e7cd2.chunk.js"
   ]
 }
