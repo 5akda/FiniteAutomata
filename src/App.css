@@ -112,3 +112,7 @@ img {
 .string :first-child {
   padding-right: 1px;
 }
+
+ul > li {
+  font-family: monospace;
+}

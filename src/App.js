@@ -10,7 +10,7 @@ import accept from './images/Accept.png';
 import reader from './images/etc/readerArrow.png';
 import helpImg from './images/etc/help1.jpg';
 
-const credit = 'Source Code 0.2.408';
+const credit = 'Source Code 0.2.413';
 
 class App extends Component {
 
@@ -112,6 +112,19 @@ class App extends Component {
   handleCharClick(char) {
     // - Insert a char by clicking a button - //
     this.setState({ text: this.state.text + char });
+  }
+
+  componentDidMount(){
+    let Q = ["Done","Fault","Station1","Station2","Station3","Station4","1MoreCoin","2MoreCoins","3MoreCoins","Init"];
+    Q.forEach(q => {
+      let output = transitionFunction(q,"");
+      this.setState({
+        img: output[0]
+      });
+    });
+    this.setState({
+      img: base
+    });
   }
 
   render() {
@@ -226,7 +239,7 @@ function HelpModal(props) {
       centered
     >
       <Modal.Header>
-        <h4><b>DFA เครื่องจำหน่ายตั๋วรถไฟ</b></h4>
+        <h4><b>DFA จำลองขั้นตอนการซื้อตั๋วรถไฟ</b></h4>
       </Modal.Header>
       <Modal.Body>
         <p>
