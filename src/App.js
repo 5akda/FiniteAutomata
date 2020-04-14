@@ -10,7 +10,7 @@ import accept from './images/Accept.png';
 import reader from './images/etc/readerArrow.png';
 import helpImg from './images/etc/help1.jpg';
 
-const credit = 'Source Code 0.2.413';
+const credit = 'Source Code 0.2.415';
 
 class App extends Component {
 

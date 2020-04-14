@@ -16,6 +16,7 @@ export function stateInit(input) {
     case "4": {
       return [img, 'Station4'];
     }
+    case "R":
     case " ": {
       return [img, 'Init'];
     }
