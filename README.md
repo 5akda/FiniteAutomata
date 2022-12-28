@@ -1,5 +1,5 @@
 ## Deployed Website
-เข้าสู่เว็บไซท์ : https://parzival48.github.io/FiniteAutomata
+เข้าสู่เว็บไซท์ : https://5akda.github.io/FiniteAutomata
 
 ## Preface
 Project นี้เป็นส่วนหนึ่งของวิชา Theory of Computations
